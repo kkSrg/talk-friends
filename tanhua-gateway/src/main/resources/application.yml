@@ -1,0 +1,20 @@
+server:
+  port: 80
+spring:
+  application:
+    name: tanhua-gateway
+  cloud:
+    nacos:
+      server-addr: 192.168.136.160:8848
+    #网关路由的配置
+    gateway:
+      routes:
+        - id: tanhua-sso
+          uri: lb://tanhua-sso
+          predicates:
+           - Path= /user/**
+
+        - id: tanhua-app
+          uri: lb://tanhua-app
+          predicates:
+            - Path= /**

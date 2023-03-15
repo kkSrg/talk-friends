@@ -1,0 +1,48 @@
+server:
+  port: 18081
+spring:
+  application:
+    name: tanhua-sso
+  cloud:
+    nacos:
+      server-addr: 192.168.136.160:8848
+  redis:
+    host: 192.168.136.160
+    port: 6379
+  # 更改允许文件上传的大小
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+dubbo:
+  registry:
+    address: spring-cloud://locahost
+  scan:
+    base-packages: com.tanhua.service
+  protocol:
+    port: 20882
+    name: dubbo
+# 配置相关的信息
+tanhua:
+  sms:
+    signName: 阿里云短信测试
+    templateCode: SMS_154950909
+    accessKey: LTAI5tEKqN4KSmHuViyDa3Uf
+    secret: SkBIO9raO9RTDsR53ErY9O3Rg78ekX
+
+  oss:
+    accessKey: LTAI5tEKqN4KSmHuViyDa3Uf
+    secret: SkBIO9raO9RTDsR53ErY9O3Rg78ekX
+    bucketName: tanhua-srg
+    url: https://tanhua-srg.oss-cn-hangzhou.aliyuncs.com
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+
+  aip:
+    appId: 28796297
+    apiKey: GSAWyKI0j1ZrW7NADB8eMFCy
+    secretKey: YdyZGXhQSfv8NkqG3heUrhdcPOLRPvir
+
+  huanxin:
+    appkey: 1107221205104929#tanhua
+    clientId: YXA6cWq8LvF2Q4Cw_s49h2St-Q
+    clientSecret: YXA6HyXN6zLfWle-bKT2fhAPq85QhUA

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: tanhua-mongo
+  data:
+    mongodb:
+      uri: mongodb://192.168.136.160:27017/tanhua
+  cloud:
+    nacos:
+      server-addr: 192.168.136.160:8848
+  redis:
+    host: 192.168.136.160
+    port: 6379
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20884
+  registry:
+    address: spring-cloud://localhost
+  scan:
+    base-packages: com.tanhua.dubbo.mg.api

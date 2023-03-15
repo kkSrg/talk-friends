@@ -1,0 +1,51 @@
+server:
+  port: 18083
+spring:
+  application:
+    name: tanhua-app
+  cloud:
+    nacos:
+      server-addr: 192.168.136.160:8848
+  redis:
+    port: 6379
+    host: 192.168.136.160
+dubbo:
+  registry:
+    address: spring-cloud://locahost
+  scan:
+    base-packages: com.tanhua.app.service
+  protocol:
+    port: 20883
+    name: dubbo
+defaultPids: 16,17,18,19,20,21,22,23,24,25
+
+tanhua:
+  #默认推荐列表
+  default:
+    recommend:
+      users: 2,3,8,10,18,20,24,29,27,32,36,37,56,64,75,88
+
+  oss:
+    accessKey: LTAI5tEKqN4KSmHuViyDa3Uf
+    secret: SkBIO9raO9RTDsR53ErY9O3Rg78ekX
+    bucketName: tanhua-srg
+    url: https://tanhua-srg.oss-cn-hangzhou.aliyuncs.com
+    endpoint: oss-cn-hangzhou.aliyuncs.com
+
+  huanxin:
+    appkey: 1107221205104929#tanhua
+    clientId: YXA6cWq8LvF2Q4Cw_s49h2St-Q
+    clientSecret: YXA6HyXN6zLfWle-bKT2fhAPq85QhUA
+
+# 分布式文件系统FDFS配置
+fdfs:
+  so-timeout: 1500
+  connect-timeout: 600
+  #缩略图生成参数
+  thumb-image:
+    width: 150
+    height: 150
+  #TrackerList参数,支持多个
+  tracker-list: 192.168.136.160:22122
+  web-server-url: http://192.168.136.160:8888
+

@@ -1,0 +1,10 @@
+# 项目排除路径
+/tanhua-app/target/
+/tanhua-autoconfig/target/
+/tanhua-commons/target/
+/tanhua-dubbo/tanhua-dubbo-db/target/
+/tanhua-dubbo/tanhua-dubbo-interface/target/
+/tanhua-dubbo/tanhua-dubbo-mongo/target/
+/tanhua-gateway/target/
+/tanhua-model/target/
+/tanhua-sso/target/

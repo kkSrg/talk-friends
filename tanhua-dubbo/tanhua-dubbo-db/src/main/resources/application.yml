@@ -1,0 +1,34 @@
+server:
+  port: 18082
+spring:
+  application:
+    name: dubbo-db
+  cloud:
+    nacos:
+      server-addr: 192.168.136.160:8848
+  # 数据源配置
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///tanhua?useSSL=false
+    username: root
+    password: 123456
+
+
+
+# dubbo配置
+dubbo:
+  registry:
+    address: spring-cloud://localhost
+  protocol:
+    port: 20881
+    name: dubbo
+  scan:
+    base-packages: com.tanhua.dubbo.db.api
+# mp配置
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      table-prefix: tb_
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
